@@ -1,13 +1,13 @@
 validarCNPJ(cnpj) {
-
+    
+    // deixando apenas números
     cnpj = cnpj.replace(/[^\d]+/g, '');
 
 
-    if (cnpj || cnpj.length !== 14 ) { return false; }
+    if (cnpj.length !== 14 ) { return false; }
 
-
+    // Elimina CNPJs invalidos conhecidos-- todos os numeros reptidos(exp: 11111111111111)
     if (cnpj.match(/^([1]{14}|[2]{14}|[3]{14}|[4]{14}|[5]{14}|[6]{14}|[7]{14}|[8]{14}|[9]{14})$/)) {
-      alert(' deu ruim');
       return false;
     }
 
